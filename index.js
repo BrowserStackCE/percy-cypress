@@ -13,7 +13,7 @@ utils.percy.address = Cypress.env('PERCY_SERVER_ADDRESS');
 
 // Use Cypress's http:request backend task
 utils.request.fetch = async function fetch(url, options) {
-  options = { url, retryOnNetworkFailure: false, ...options };
+  options = { url, retryOnNetworkFailure: true, ...options };
   return Cypress.backend('http:request', options);
 };
 
